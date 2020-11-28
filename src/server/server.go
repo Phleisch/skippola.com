@@ -17,6 +17,8 @@ const (
 	LOG_FILE_MODE  = 0666
 
 	DOMAIN_NAME = "localhost"
+
+	// Location of HTML pages
 	PAGES_DIR = "../pages"
 )
 
@@ -37,8 +39,16 @@ func blogHandler(writer http.ResponseWriter, request *http.Request) {
 	fmt.Fprintf(writer, "Hello from the blog handler!")
 }
 
+// indexHandler is a catch all handler for url's that do not match any other
+// handler. Will display the index page.
 func indexHandler(writer http.ResponseWriter, request *http.Request) {
 	http.ServeFile(writer, request, PAGES_DIR + "/index/index.html")
+}
+
+// gpgHandler handles requests for gpg.skippola.com. Will return my public GPG
+// key.
+func gpgHandler(writer http.ResponseWriter, request *http.Request) {
+	http.ServeFile(writer, request, PAGES_DIR + "/gpg/kai_fleischman.gpg")
 }
 
 func main() {
