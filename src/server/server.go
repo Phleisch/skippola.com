@@ -11,6 +11,9 @@ const (
 	// Port TLS should be served from
 	TLS_PORT = ":443"
 
+	// Port HTTP should be served from
+	HTTP_PORT = ":80"
+
 	// Information pertaining to the nature in which the server's log file
 	// may be opened
 	LOG_FILE_FLAGS = os.O_RDWR | os.O_CREATE | os.O_APPEND
@@ -52,6 +55,19 @@ func gpgHandler(writer http.ResponseWriter, request *http.Request) {
 	http.ServeFile(writer, request, PAGES_DIR+"/gpg/kai_fleischman.gpg")
 }
 
+// redirectHttpToHttps redirects all incoming HTTP requests to the HTTPS
+// equivalent.
+func redirectHttpToHttps(writer http.ResponseWriter, request *http.Request) {
+	// remove/add not default ports from req.Host
+    target := "https://" + request.Host + request.URL.Path
+    if len(request.URL.RawQuery) > 0 {
+        target += "?" + request.URL.RawQuery
+    }
+
+    log.Printf("redirect to: %s", target)
+    http.Redirect(writer, request, target, http.StatusTemporaryRedirect)
+}
+
 func main() {
 	// Setup the logger to write logs to a file
 	log_file, err := os.OpenFile(LOG_FILE_PATH, LOG_FILE_FLAGS, LOG_FILE_MODE)
@@ -71,8 +87,10 @@ func main() {
 		http.HandleFunc(endpoint, handler)
 	}
 
+	// Redirect all HTTP traffic to HTTPS
+	go http.ListenAndServe(HTTP_PORT, http.HandlerFunc(redirectHttpToHttps))
+
 	log.Printf("Handling traffic for skippola.com on port%s", TLS_PORT)
-	//err = http.ListenAndServeTLS(TLS_PORT, CERT_CHAIN_PATH, CERT_KEY_PATH, nil)
-	err = http.ListenAndServe(":8077", nil)
+	err = http.ListenAndServeTLS(TLS_PORT, CERT_CHAIN_PATH, CERT_KEY_PATH, nil)
 	log.Fatal(err)
 }
