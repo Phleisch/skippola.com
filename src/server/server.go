@@ -31,6 +31,7 @@ var (
 
 	ENDPOINT_HANDLER_MAP = map[string]func(http.ResponseWriter, *http.Request){
 		"/":                         indexHandler,
+		"gpg." + DOMAIN_NAME + "/":  gpgHandler,
 		"blog." + DOMAIN_NAME + "/": blogHandler,
 	}
 )
@@ -42,13 +43,13 @@ func blogHandler(writer http.ResponseWriter, request *http.Request) {
 // indexHandler is a catch all handler for url's that do not match any other
 // handler. Will display the index page.
 func indexHandler(writer http.ResponseWriter, request *http.Request) {
-	http.ServeFile(writer, request, PAGES_DIR + "/index/index.html")
+	http.ServeFile(writer, request, PAGES_DIR+"/index/index.html")
 }
 
 // gpgHandler handles requests for gpg.skippola.com. Will return my public GPG
 // key.
 func gpgHandler(writer http.ResponseWriter, request *http.Request) {
-	http.ServeFile(writer, request, PAGES_DIR + "/gpg/kai_fleischman.gpg")
+	http.ServeFile(writer, request, PAGES_DIR+"/gpg/kai_fleischman.gpg")
 }
 
 func main() {
