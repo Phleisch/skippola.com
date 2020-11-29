@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -33,9 +32,9 @@ var (
 	CERT_CHAIN_PATH = os.Getenv("CERTIFICATE_CHAIN_PATH")
 
 	ENDPOINT_HANDLER_MAP = map[string]func(http.ResponseWriter, *http.Request){
-		"/":                indexHandler,
-		"/" + "gpg":        gpgHandler,
-		"/" + "blog" + "/": blogHandler,
+		"/":                        indexHandler,
+		"/" + "kai_fleischman.gpg": gpgHandler,
+		"/" + "blog":               blogIndexHandler,
 	}
 )
 
@@ -45,27 +44,26 @@ func pageNotFoundHandler(writer http.ResponseWriter, request *http.Request) {
 	http.ServeFile(writer, request, PAGES_DIR+"/errors/404.html")
 }
 
-func blogHandler(writer http.ResponseWriter, request *http.Request) {
-	fmt.Fprintf(writer, "Hello from the blog handler!")
+func blogIndexHandler(writer http.ResponseWriter, request *http.Request) {
+	http.ServeFile(writer, request, PAGES_DIR+"/rolling-blog.html")
 }
 
 // indexHandler is a catch all handler for url's that do not match any other
 // handler. Will display the index page.
 func indexHandler(writer http.ResponseWriter, request *http.Request) {
-	// That page doesn't exist
-	if request.URL.Path != "/" {
+	if request.URL.Path == "/" {
+		http.ServeFile(writer, request, PAGES_DIR+"/index.html")
+	} else if _, err := os.Stat(PAGES_DIR+request.URL.Path); err == nil {
+		http.ServeFile(writer, request, PAGES_DIR+request.URL.Path)
+	} else {
 		pageNotFoundHandler(writer, request)
-		return
 	}
-
-	http.ServeFile(writer, request, PAGES_DIR+"/index.html")
 }
 
 // gpgHandler handles requests for gpg.skippola.com. Will return my public GPG
 // key.
 func gpgHandler(writer http.ResponseWriter, request *http.Request) {
-	http.ServeFile(writer, request,
-		PAGES_DIR+request.URL.Path+"/kai_fleischman.gpg")
+	http.ServeFile(writer, request, PAGES_DIR+"/kai_fleischman.gpg")
 }
 
 // redirectHttpToHttps redirects all incoming HTTP requests to the HTTPS

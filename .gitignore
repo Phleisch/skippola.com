@@ -1,1 +1,4 @@
 *.log
+.drafts
+*.sh
+.htaccess
