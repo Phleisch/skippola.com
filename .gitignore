@@ -1,4 +1,5 @@
 *.log
 .drafts
-*.sh
 .htaccess
+*.bin
+scripts

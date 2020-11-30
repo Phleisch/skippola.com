@@ -1,6 +1,0 @@
-#!/bin/bash
-export LETSENCRYPT_DIR=/etc/letsencrypt
-export WEBSITE_HOME_DIR=/var/www/skippola.com
-export LOG_FILE_PATH="$WEBSITE_HOME_DIR"/logs/server.log
-export CERTIFICATE_KEY_PATH="$LETSENCRYPT_DIR"/skippola.com/privkey.pem
-export CERTIFICATE_CHAIN_PATH="$LETSENCRYPT_DIR"/skippola.com/fullchain.pem
