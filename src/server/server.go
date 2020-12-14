@@ -11,7 +11,7 @@ const (
 	TLS_PORT = ":443"
 
 	// Port HTTP should be served from
-	HTTP_PORT = ":8077"
+	HTTP_PORT = ":80"
 
 	// Information pertaining to the nature in which the server's log file
 	// may be opened
@@ -99,9 +99,9 @@ func main() {
 	}
 
 	// Redirect all HTTP traffic to HTTPS
-	err = http.ListenAndServe(HTTP_PORT, nil) //http.HandlerFunc(redirectHttpToHttps))
+	go http.ListenAndServe(HTTP_PORT, http.HandlerFunc(redirectHttpToHttps))
 
 	log.Printf("Handling traffic for skippola.com on port%s", TLS_PORT)
-	//err = http.ListenAndServeTLS(TLS_PORT, CERT_CHAIN_PATH, CERT_KEY_PATH, nil)
+	err = http.ListenAndServeTLS(TLS_PORT, CERT_CHAIN_PATH, CERT_KEY_PATH, nil)
 	log.Fatal(err)
 }
