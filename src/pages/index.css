@@ -2,17 +2,19 @@ body {
 	background: #999999;
 }
 
-pre {
-	display: block;
-	font-family: monospace;
-	white-space: pre;
-	margin: 1em 0px;
-}
-
 .commandBox {
 	background: #000000;
 	border: 1px solid #39FF14;
 	overflow: auto;
 	padding: 10px;
 	color: #FFFFFF;
+}
+
+.transparentLink {
+	text-decoration: none;
+	color: #000000;
+}
+
+.skippolaBanner {
+	text-align: center;
 }
