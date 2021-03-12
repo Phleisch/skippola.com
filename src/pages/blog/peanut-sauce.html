@@ -2,30 +2,75 @@
 <html lang="en">
 <head>
 <title>Peanut Sauce</title>
-<link rel='stylesheet' type='text/css' href='../style.css'>
+<link rel='stylesheet' type='text/css' href='../styles/recipe.css'>
 <meta charset='utf-8'/>
 </head>
 <body>
-<h1>Peanut Sauce</h1>
-<small>[<a href='../blog#peanut-sauce'>link</a>&mdash;<a href='peanut-sauce.html'>standalone</a>]</small>
-<h2>Ingredients</h2>
-	<ul type="square">
-		<li>1/3 cup peanut butter</li>
-		<li>2 tablespoons rice vinegar</li>
-		<li>2 tablespoons soy sauce</li>
-		<li>3 tablespoons of sugar</li>
-		<li>1 tablespoon toasted sesame oil</li>
-		<li>2 cloves garlic minced</li>
-		<li>2 to 3 tablespoons of water</li>
-	</ul>
 
-<h2>Instructions</h2>
-	<ol>
-		<li>Mix together all the ingredients in a bowl.</li>
-		<li>Taste the sauce. Amend the sauce to your preference. If the sauce
-			is too thick, add more water. If the sauce is too watery, add more
-			peanute butter.</li>
-	</ol>
+		<div id="recipe">
+			<div id="space">
+				<!-- Recipe name -->
+				<div id="name">
+					<h1>Peanut Sauce</h1>
+					<small>[<a href='../blog#peanut-sauce'>link</a>&mdash;<a href='peanut-sauce.html'>standalone</a>]</small>
+				</div>
+
+				<!-- Container for prep/total time -->
+				<div class="times">
+					<div class="time">
+						<h3>Prep Time</h3>
+						<p>2 minutes</p>
+					</div>
+
+					<hr>
+
+					<div class="time">
+						<h3>Total Time</h3>
+						<p>5 minutes</p>
+					</div>
+				</div>
+
+				
+				<!-- Container for ingredients -->
+				<div id="ingredients">
+					<h2><b>Ingredients</b></h2>
+					<ul>
+					<!-- The format of an ingredient is: <amount> <name> <prep> -->
+						<li><input type="checkbox"><span>
+							<b>1/3 cup</b> peanut butter
+						</span></input></li>
+						<li><input type="checkbox"><span>
+							<b>2 tbsp</b> rice vinegar
+						</span></input></li>
+						<li><input type="checkbox"><span>
+							<b>2 tbsp</b> soy sauce
+						</span></input></li>
+						<li><input type="checkbox"><span>
+							<b>3 tbsp</b> sugar
+						</span></input></li>
+						<li><input type="checkbox"><span>
+							<b>1 tbsp</b> toasted sesame oil
+						</span></input></li>
+						<li><input type="checkbox"><span>
+							<b>2</b> garlic cloves <i>minced</i>
+						</span></input></li>
+						<li><input type="checkbox"><span>
+							<b>2 tbsp</b> water
+						</span></input></li>
+					</ul>
+				</div>
+
+				<!-- Container for instructions -->
+				<div>
+					<h2><b>Instructions</b></h2>
+					<ol>
+						<li>Mix together all the ingredients in a bowl.</li>
+						<li>Taste the sauce. Amend the sauce to your preference. If the sauce is too thick, add more water. If the sauce is too watery, add more peanut butter.</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+
 <footer>by <strong><a href='https://skippola.com/'>Kai Fleischman</a></strong></footer>
 </body>
 

@@ -2,28 +2,71 @@
 <html lang="en">
 <head>
 <title>General Tso's Sauce</title>
-<link rel='stylesheet' type='text/css' href='../style.css'>
+<link rel='stylesheet' type='text/css' href='../styles/recipe.css'>
 <meta charset='utf-8'/>
 </head>
 <body>
-<h1>General Tso's Sauce</h1>
-<small>[<a href='../blog#general-tsos-sauce'>link</a>&mdash;<a href='general-tsos-sauce.html'>standalone</a>]</small>
-<h2>Ingredients</h2>
-	<ul type="square">
-		<li>2 tablespoons soy sauce</li>
-		<li>2 tablespoons rice vinegar</li>
-		<li>2 tablespoons sugar</li>
-		<li>2 teaspoons hoisin sauce</li>
-		<li>2 teaspoons chili sauce</li>
-		<li>2 teaspoons sesame oil</li>
-	</ul>
 
-<h2>Instructions</h2>
-	<ol>
-		<li>Mix ingredients in whatever order you desire in a bowl</li>
-		<li>Use with food. Typically I use this with tofu, rice and stir-fried
-			vegetables</li>
-	</ol>
+		<div id="recipe">
+			<div id="space">
+				<!-- Recipe name -->
+				<div id="name">
+					<h1>General Tso's Sauce</h1>
+					<small>[<a href='../blog#general-tsos-sauce'>link</a>&mdash;<a href='general-tsos-sauce.html'>standalone</a>]</small>
+				</div>
+
+				<!-- Container for prep/total time -->
+				<div class="times">
+					<div class="time">
+						<h3>Prep Time</h3>
+						<p>2 minutes</p>
+					</div>
+
+					<hr>
+
+					<div class="time">
+						<h3>Total Time</h3>
+						<p>5 minutes</p>
+					</div>
+				</div>
+
+				
+				<!-- Container for ingredients -->
+				<div id="ingredients">
+					<h2><b>Ingredients</b></h2>
+					<ul>
+					<!-- The format of an ingredient is: <amount> <name> <prep> -->
+						<li><input type="checkbox"><span>
+							<b>2 tbsp</b> soy sauce
+						</span></input></li>
+						<li><input type="checkbox"><span>
+							<b>2 tbsp</b> rice vinegar
+						</span></input></li>
+						<li><input type="checkbox"><span>
+							<b>2 tbsp</b> sugar
+						</span></input></li>
+						<li><input type="checkbox"><span>
+							<b>2 tsp</b> hoisin sauce
+						</span></input></li>
+						<li><input type="checkbox"><span>
+							<b>2 tsp</b> chili sauce <i>sriracha recommended</i>
+						</span></input></li>
+						<li><input type="checkbox"><span>
+							<b>2 tsp</b> seasame oil
+						</span></input></li>
+					</ul>
+				</div>
+
+				<!-- Container for instructions -->
+				<div>
+					<h2><b>Instructions</b></h2>
+					<ol>
+						<li>Mix ingredients in whatever order you desire in a bowl</li>
+						<li>Use with food. Typically I use this with tofu, rice and stir-fried vegetables</li>
+					</ol>
+				</div>
+			</div>
+		</div>
 <footer>by <strong><a href='https://skippola.com/'>Kai Fleischman</a></strong></footer>
 </body>
 
