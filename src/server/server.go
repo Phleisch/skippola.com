@@ -38,10 +38,11 @@ var (
 	}
 )
 
-// pageNotFoundHandler is used to display a 404 error page when a visitor tries
+// pageNotFoundHandler is used to display a 404 erro page when a visitor tries
 // to view a page that does not exist.
 func pageNotFoundHandler(writer http.ResponseWriter, request *http.Request) {
-	http.NotFound(writer, request)
+	writer.WriteHeader(http.StatusNotFound)
+	http.ServeFile(writer, request, PAGES_DIR+"/errors/404.html")
 }
 
 func blogIndexHandler(writer http.ResponseWriter, request *http.Request) {
