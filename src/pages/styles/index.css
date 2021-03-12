@@ -1,18 +1,18 @@
 body {
-	background: #999999;
+	background: #999;
 }
 
 .commandBox {
-	background: #000000;
+	background: #000;
 	border: 1px solid #39FF14;
 	overflow: auto;
 	padding: 10px;
-	color: #FFFFFF;
+	color: #FFF;
 }
 
 .transparentLink {
 	text-decoration: none;
-	color: #000000;
+	color: #000;
 }
 
 .skippolaBanner {
@@ -37,10 +37,6 @@ ul {
 
 li {
 	float: left;
-	display: inline;
-
-	background-image('https://hedgecombers.com/wp-content/plugins/wp-recipe-maker/assets/icons/checkbox-checked.svg');
-	background-repeat: no-repeat;
 }
 
 li a {
@@ -50,11 +46,11 @@ li a {
 }
 
 .blueBackground {
-	background: #0000FF;
+	background: #00F;
 }
 
 .redBackground {
-	background: #FF0000;
+	background: #F00;
 }
 
 .greenBackground {
