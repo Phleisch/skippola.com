@@ -1,0 +1,50 @@
+.time {
+	flex: 1;
+	text-align: center;
+}
+
+.times {
+	margin-left: 25%;
+	width: 50%;
+	display: flex;
+}
+
+#ingredients ul {
+	list-style: none;
+	padding-left: 20px;
+}
+
+input[type="checkbox"]:checked + span {
+	text-decoration: line-through;
+}
+
+#recipe {
+	border-style: groove;
+	border-size: 1;
+}
+
+#space {
+	/* 2% on top, %5 on the right, 2% on the bottom, 5% on the left */
+	margin: 2% 5% 2% 5%;
+}
+
+#name {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+h1 {
+	margin: 0;
+}
+
+h2 {
+	margin: 0;
+}
+
+h4 {
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}

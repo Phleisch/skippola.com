@@ -38,6 +38,9 @@ ul {
 li {
 	float: left;
 	display: inline;
+
+	background-image('https://hedgecombers.com/wp-content/plugins/wp-recipe-maker/assets/icons/checkbox-checked.svg');
+	background-repeat: no-repeat;
 }
 
 li a {
