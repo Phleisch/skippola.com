@@ -1,16 +1,20 @@
 package recipesHandler
 
 import (
-	"json"
-	"ioutil"
+	"html/template"
+	"encoding/json"
+	"io/ioutil"
 	"strings"
 	"net/http"
+	"fmt"
+	"os"
 )
 
 // struct for a recipe; all fields are required and both ingredients and
 // instructions lists must have at least one item each
 type recipe struct {
 	Name			string			`json:"name"`
+	UrlName			string
 	PrepTime		string			`json:"prepTime"`
 	TotalTime		string			`json:"totalTime"`
 	Ingredients		[]ingredient	`json:"ingredients"`
@@ -23,10 +27,6 @@ type ingredient struct {
 	Name	string	`json:"name"`
 	Amount	string	`json:"amount"`
 	Prep	string	`json:"prep"`
-}
-
-func generateRecipePage(r recipe, pageTemplate, pathName string) {
-
 }
 
 // Handle all requests for specific recipe pages for any URL beginning with the
@@ -43,14 +43,19 @@ func PageHandler(write http.ResponseWriter, request *http.Request) {
 	var r recipe
 	err = json.Unmarshal(recipeJson, &r)
 	if err != nil { fmt.Println(err) }
+	r.UrlName = recipeName
 
 	// open the recipe page template for formatting
-	recipeWebpageTemplate, err := ioutil.ReadFile("recipeFormat.html")
+	pageTemplate, err := ioutil.ReadFile("recipeFormat.html")
 	if err != nil { fmt.Println(err) }
 
-	// format the recipe page template with specifics of the recipe to generate
-	// the recipe's webpage
-	generateRecipePage(r, string(recipeWebpageTemplate), recipeName)
+	// open and parse the recipe template
+	tmplt, err := template.New(recipeName).Parse(string(pageTemplate))
+	if err != nil { fmt.Println(err) }
+
+	// execute the template with specific recipe data to create the recipe page
+	err = tmplt.Execute(os.Stdout, r)
+	if err != nil { fmt.Println(err) }
 }
 
 // Handle all requests for the recipe index page at "/recipes"
