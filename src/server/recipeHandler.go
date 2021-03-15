@@ -7,7 +7,6 @@ import (
 	"strings"
 	"net/http"
 	"fmt"
-	"os"
 )
 
 // struct for a recipe; all fields are required and both ingredients and
@@ -31,7 +30,7 @@ type ingredient struct {
 
 // Handle all requests for specific recipe pages for any URL beginning with the
 // path "/recipes/"
-func PageHandler(write http.ResponseWriter, request *http.Request) {
+func PageHandler(writer http.ResponseWriter, request *http.Request) {
 	// get the recipe page to fetch from the URL
 	recipeName := strings.TrimPrefix(request.URL.Path, "/recipes/")
 
@@ -54,8 +53,8 @@ func PageHandler(write http.ResponseWriter, request *http.Request) {
 	if err != nil { fmt.Println(err) }
 
 	// execute the template with specific recipe data to create the recipe page
-	err = tmplt.Execute(os.Stdout, r)
-	if err != nil { fmt.Println(err) }
+	// and write as a response
+	tmplt.Execute(writer, r)
 }
 
 // Handle all requests for the recipe index page at "/recipes"
