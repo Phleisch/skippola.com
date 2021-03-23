@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"./recipes"
 )
 
 const (
@@ -35,6 +36,8 @@ var (
 		"/":                        indexHandler,
 		"/" + "kai_fleischman.gpg": gpgHandler,
 		"/" + "blog":               blogIndexHandler,
+		"/" + "recipes":			recipes.IndexHandler,
+		"/" + "recipes" + "/":		recipes.PageHandler,
 	}
 )
 
