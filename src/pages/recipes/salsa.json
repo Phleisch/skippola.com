@@ -1,0 +1,16 @@
+{
+	"name": "Salsa",
+	"prepTime": "10 minutes",
+	"totalTime": "10 minutes",
+	"ingredients": [
+		{"name": "large red onion", "amount": "1", "prep": "finely chopped"},
+		{"name": "medium tomatoes", "amount": "4", "prep": "finely chopped"},
+		{"name": "jalapeño peppers", "amount": "2", "prep": "finely chopped"},
+		{"name": "garlic cloves", "amount": "2", "prep": "finely chopped"},
+		{"name": "lime", "amount": "1", "prep": "halved and squeezed"},
+		{"name": "salt", "amount": "1 pinch"},
+		{"name": "pepper", "amount": "1 tbsp"},
+		{"name": "cilantro", "amount": "1/2 cup"}
+	],
+	"instructions": ["Finely chop all fresh ingredients to desired size.","Mix together cut ingredients and spices in a large bowl.","Serve with nachos, tortillas, tacos or whatever your salsa heart desires.","(Optional) Make the recipe your own by adding additional spices, for example cumin, oregano, chili powder, etc. "]
+}
