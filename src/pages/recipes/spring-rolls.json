@@ -1,0 +1,21 @@
+{
+	"name": "Spring Rolls",
+	"prepTime": "25 minutes",
+	"totalTime": "40 minutes",
+	"ingredients": [
+		{"name": "glass or rice vermicelli noodles", "amount": "2 ounces"},
+		{"name": "sesame oil", "amount": "1 tsp"},
+		{"name": "sea salt", "amount": "1/4 tsp"},
+		{"name": "butter lettuce", "amount": "1 cup", "prep": "torn with ribs removed"},
+		{"name": "red cabbage", "amount": "1 cup", "prep": "very thinly sliced"},
+		{"name": "medium carrots", "amount": "2", "prep": "cut into matchsticks"},
+		{"name": "cucumber", "amount": "1", "prep": "cut into matchsticks"},
+		{"name": "jalapeños", "amount": "2", "prep": "diced"},
+		{"name": "green onions", "amount": "1/4 cup", "prep": "thinly sliced"},
+		{"name": "fresh cilantro", "amount": "1/4 cup", "prep": "roughly chopped"},
+		{"name": "fresh mint", "amount": "1/4 cup", "prep": "roughly chopped"},
+		{"name": "sheets of rice paper", "amount": "8"},
+		{"name": "<a href='peanut-sauce'>Peanut Sauce</a>"}
+	],
+	"instructions": ["Cook the noodles to perfection, draining them, cooling them wit    h water, and then tossing them with the salt and sesame oil off the heat.", "Assemble your spring rolls. Get a sheet of rice paper wet until it fails to maintain structure and starts becoming sticky. Place a handful of ingredients on the paper in the bottom third, leaving plenty of room on the side. Fold over the side of the rice paper closest to the ingredients. Tuck the side under the ingredients. Fold the outer edges tightly onto the ingredients. Roll the paper to completion.", "Key idea to rolling your spring rolls is to keep it tight!"]
+}
