@@ -1,10 +1,10 @@
 package main
 
 import (
+	"./recipes"
 	"log"
 	"net/http"
 	"os"
-	"./recipes"
 )
 
 const (
@@ -36,8 +36,8 @@ var (
 		"/":                        indexHandler,
 		"/" + "kai_fleischman.gpg": gpgHandler,
 		"/" + "blog":               blogIndexHandler,
-		"/" + "recipes":			recipes.IndexHandler,
-		"/" + "recipes" + "/":		recipes.PageHandler,
+		"/" + "recipes":            recipes.IndexHandler,
+		"/" + "recipes" + "/":      recipes.PageHandler,
 	}
 )
 
@@ -57,7 +57,7 @@ func blogIndexHandler(writer http.ResponseWriter, request *http.Request) {
 func indexHandler(writer http.ResponseWriter, request *http.Request) {
 	if request.URL.Path == "/" {
 		http.ServeFile(writer, request, PAGES_DIR+"/index.html")
-	} else if _, err := os.Stat(PAGES_DIR+request.URL.Path); err == nil {
+	} else if _, err := os.Stat(PAGES_DIR + request.URL.Path); err == nil {
 		http.ServeFile(writer, request, PAGES_DIR+request.URL.Path)
 	} else {
 		pageNotFoundHandler(writer, request)
