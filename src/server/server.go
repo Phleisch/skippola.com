@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./recipes"
+	"skippola.com/server/recipes"
 	"log"
 	"net/http"
 	"os"
@@ -70,19 +70,6 @@ func gpgHandler(writer http.ResponseWriter, request *http.Request) {
 	http.ServeFile(writer, request, PAGES_DIR+"/kai_fleischman.gpg")
 }
 
-// redirectHttpToHttps redirects all incoming HTTP requests to the HTTPS
-// equivalent.
-func redirectHttpToHttps(writer http.ResponseWriter, request *http.Request) {
-	// remove/add not default ports from req.Host
-	target := "https://" + request.Host + request.URL.Path
-	if len(request.URL.RawQuery) > 0 {
-		target += "?" + request.URL.RawQuery
-	}
-
-	log.Printf("redirect to: %s", target)
-	http.Redirect(writer, request, target, http.StatusTemporaryRedirect)
-}
-
 func main() {
 	// Setup the logger to write logs to a file
 	log_file, err := os.OpenFile(LOG_FILE_PATH, LOG_FILE_FLAGS, LOG_FILE_MODE)
@@ -102,10 +89,15 @@ func main() {
 		http.HandleFunc(endpoint, handler)
 	}
 
-	// Redirect all HTTP traffic to HTTPS
-	go http.ListenAndServe(HTTP_PORT, http.HandlerFunc(redirectHttpToHttps))
-
-	log.Printf("Handling traffic for skippola.com on port%s", TLS_PORT)
+	// Attempt to listen and handle HTTPS traffic
 	err = http.ListenAndServeTLS(TLS_PORT, CERT_CHAIN_PATH, CERT_KEY_PATH, nil)
+
+	// Failed to listen to HTTPS traffic, revert to HTTP
+	if err != nil {
+		log.Println(err)
+		log.Println("Could not establish TLS! Handling HTTP traffic only")
+		err = http.ListenAndServe(HTTP_PORT, nil)
+	}
+
 	log.Fatal(err)
 }
