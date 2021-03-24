@@ -9,14 +9,10 @@ COPY /src .
 EXPOSE 80
 EXPOSE 443
 
-# Add args for changing environment variables from the outside world
-ARG CERTIFICATE_KEY_PATH=""
-ARG CERTIFICATE_CHAIN_PATH=""
-
 # Environment variable used by the server
 ENV LOG_FILE_PATH="../server.log"
-ENV CERTIFICATE_KEY_PATH="$CERTIFICATE_KEY_PATH"
-ENV CERTIFICATE_CHAIN_PATH="$CERTIFICATE_CHAIN_PATH"
+ENV CERTIFICATE_KEY_FILE="privkey.pem"
+ENV CERTIFICATE_CHAIN_FILE="fullchain.pem"
 
 # Move to the directory containing server code
 WORKDIR /go/src/server

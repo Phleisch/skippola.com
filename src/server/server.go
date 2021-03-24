@@ -29,8 +29,8 @@ var (
 	LOG_FILE_PATH = os.Getenv("LOG_FILE_PATH")
 
 	// Get certificate information from environment variables
-	CERT_KEY_PATH   = os.Getenv("CERTIFICATE_KEY_PATH")
-	CERT_CHAIN_PATH = os.Getenv("CERTIFICATE_CHAIN_PATH")
+	CERT_KEY_PATH   = os.Getenv("CERTIFICATE_KEY_FILE")
+	CERT_CHAIN_PATH = os.Getenv("CERTIFICATE_CHAIN_FILE")
 
 	ENDPOINT_HANDLER_MAP = map[string]func(http.ResponseWriter, *http.Request){
 		"/":                        indexHandler,
