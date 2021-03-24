@@ -1,10 +1,6 @@
 # Use features from go version 1.16, using golang:1.16 is necessary
 FROM golang:1.16
 
-# Copy all necessary website code and assets
-WORKDIR /go/src
-COPY /src .
-
 # Open up common web traffic (HTTP/S) ports for use
 EXPOSE 80
 EXPOSE 443
@@ -13,6 +9,10 @@ EXPOSE 443
 ENV LOG_FILE_PATH="../server.log"
 ENV CERTIFICATE_KEY_FILE="privkey.pem"
 ENV CERTIFICATE_CHAIN_FILE="fullchain.pem"
+
+# Copy all necessary website code and assets
+WORKDIR /go/src
+COPY /src .
 
 # Move to the directory containing server code
 WORKDIR /go/src/server
