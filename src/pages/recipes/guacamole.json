@@ -9,10 +9,5 @@
 		{"name": "lime", "amount": "1", "prep": "juiced"},
 		{"name": "jalapeño peppers", "amount": "2", "prep": "deribbed, deseeded and finely diced"},
 		{"name": "sea salt", "amount": "1 teaspoon", "prep": "to taste"},
-		{"name": "lime", "amount": "1", "prep": "halved and squeezed"},
-		{"name": "salt", "amount": "1 pinch"},
-		{"name": "pepper", "amount": "1 tbsp"},
-		{"name": "cilantro", "amount": "1/2 cup"}
-	],
 	"instructions": ["Using a fork, food processor or similar method, mash the avocados","Mix all ingredients together with the mashed avocados in a bowl", "Add sea salt to taste"]
 }
