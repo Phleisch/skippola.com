@@ -8,6 +8,6 @@
 		{"name": "small red onion", "amount": "1", "prep": "finely diced"},
 		{"name": "lime", "amount": "1", "prep": "juiced"},
 		{"name": "jalapeño peppers", "amount": "2", "prep": "deribbed, deseeded and finely diced"},
-		{"name": "sea salt", "amount": "1 teaspoon", "prep": "to taste"},
+		{"name": "sea salt", "amount": "1 teaspoon", "prep": "to taste"}],
 	"instructions": ["Using a fork, food processor or similar method, mash the avocados","Mix all ingredients together with the mashed avocados in a bowl", "Add sea salt to taste"]
 }
