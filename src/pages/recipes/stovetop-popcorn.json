@@ -1,0 +1,11 @@
+{
+	"name": "Stovetop Popcorn",
+	"prepTime": "1 minute",
+	"totalTime": "5 minutes",
+	"ingredients": [
+		{"name": "popcorn kernels", "amount": "1/2 cup or enough to cover bottom of pop"},
+		{"name": "high-temperature cooking oil, such as avocado oil", "amount": "2 tbsp"},
+		{"name": "Butter-like substance and salt of serving"}
+	],
+	"instructions": ["In a pot, heat oil over high heat. Put 2-3 kernels of popcorn into the pot, cover, and wait to hear all the kernels pop.", "Remove pot from the heat (do not turn heat off) and remove the popped kernels.", "Add the remaining kernels to the pot, cover, and let sit for 1 minute.", "Put the pot back over the stove on high heat. Within a few minutes the kernels shall begin popping. Shake the pot every once in a while to ensure even popping.", "Once popping slows, remove pot from the heat and let sit for another minute to let tardy kernels to finish popping.", "Pour popped kernels into bowl, add toppings of choice."]
+}
