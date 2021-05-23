@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+	<title>Contact</title>
+	<link rel="icon" href="media/favicon.svg" type="image/svg+xml">
+	<link rel="stylesheet" type="text/css" href="styles/banner.css">
+	<link rel="stylesheet" type="text/css" href="styles/contact.css">
+	<meta name="viewport" content="initial-scale=1.0">
+</head>
+<body>
+
+<!-- BEGIN BANNER -->
+<div id="banner">
+	<a href="/">
+		<pre id="ascii-art" href="/">
+  ______     __  __     __     ______   ______   ______     __         ______    
+ /\  ___\   /\ \/ /    /\ \   /\  == \ /\  == \ /\  __ \   /\ \       /\  __ \   
+ \ \___  \  \ \  _"-.  \ \ \  \ \  _-/ \ \  _-/ \ \ \/\ \  \ \ \____  \ \  __ \  
+  \/\_____\  \ \_\ \_\  \ \_\  \ \_\    \ \_\    \ \_____\  \ \_____\  \ \_\ \_\ 
+   \/_____/   \/_/\/_/   \/_/   \/_/     \/_/     \/_____/   \/_____/   \/_/\/_/ 
+		</pre>
+	</a>
+
+	<nav>
+		<ul id="menubar">
+			<li><a href="/blog" style="background: #F55;">Blog</a></li>
+			<li><a href="/contact" style="background: #5F5;">Contact</a></li>
+			<li><a href="/kai_fleischman.gpg" style="background: #55F;">GPG Key</a></li>
+			<li><a href="/recipes" style="background: #FF5">Recipes</a></li>
+		</ul>
+	</nav>
+</div><div style="clear: both;"></div>
+<!-- END BANNER -->
+
+<section id="content">
+	<h1>How to Contact Me</h1>
+	<p>If you know me, then you already know a way to
+		get in touch with me, and therefore this page isn't really all that
+		essential for you. For everyone else, you can still reach me, but in
+		order to discourage spammers and the like, I've made finding out my
+		contact info a bit inconvenient. My email and Matrix info have been
+		encrypted (signed) using my GPG Private Key and can be decrypted with
+		my GPG Public Key in order to retrieve the proper info</p>
+
+	<h1>GPG Key</h1>
+	<p>GPG Key Fingerprint: AAA5 3F3E 927E C5E1 DDFF A714 9AF9 CEC5 8750 2B7A</p>
+
+	<h3>Import My GPG Key</h3>
+		<p>
+			For all those security-minded, computer-whizzes out there, my GPG
+			key can be found <a href="/kai_fleischman.gpg">here</a>
+		</p>
+		<p> Import my GPG key with the following command:
+			<pre class="commandBox">
+$ <b>curl -L https://skippola.com/kai_fleischman.gpg | gpg --import</b>
+			</pre>
+		</p>
+
+
+	<h1>Email</h1>
+	<a href="files/email.asc">Armored, encrypted email contact info</a>
+
+	<h1>Matrix</h1>
+	<p><a href="https://matrix.org">Matrix</a> is an open source standard for
+		secure (end-to-end encrypted), decentralized (can host your own server
+		for it), interoperable communication standard</p>
+
+	<a href="files/matrix.asc">Armored, encrypted matrix contact info</a>
+</section>
+</body>

@@ -3,12 +3,9 @@ FROM golang:1.16
 
 # Open up common web traffic (HTTP/S) ports for use
 EXPOSE 80
-EXPOSE 443
 
 # Environment variable used by the server
 ENV LOG_FILE_PATH="../server.log"
-ENV CERTIFICATE_KEY_FILE="privkey.pem"
-ENV CERTIFICATE_CHAIN_FILE="fullchain.pem"
 
 # Copy all necessary website code and assets
 WORKDIR /go/src

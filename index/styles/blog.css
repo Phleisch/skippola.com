@@ -1,0 +1,34 @@
+#posts {
+	margin: 0 auto;
+	width: 750px;
+}
+
+#blog {
+	text-align: center;
+}
+
+.entry {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.entry-title {
+	margin: 0 0 5px 0;
+}
+
+.entry-title a {
+	color: #000;
+}
+
+.publish-date {
+	text-decoration: italicized;
+}
+
+/* Change CSS for situations where the screen is narrow */
+@media only screen and (min-width: 320px) and (max-width: 800px) {
+	#posts {
+		margin-left: 2%;
+		margin-right: 2%;
+		width: auto;
+	}
+}

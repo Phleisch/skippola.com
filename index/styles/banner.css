@@ -1,0 +1,55 @@
+body {
+	background: #999;
+}
+
+#banner {
+	padding: 0px;
+	margin: 0 auto;
+	width: 450px;
+	text-align: center;
+	font-size: 15px;
+}
+
+#banner a {
+	text-decoration: none;
+	color: #000;
+}
+
+#ascii-art {
+	font-size: 9px;
+	border: 1px solid #000;
+	margin: 0;
+	padding: 0;
+}
+
+#menubar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#menubar li {
+	float: left;
+	width: 25%;
+}
+
+#menubar li a {
+	border: 1px solid #000;
+	display: block;
+	padding: 8px;
+}
+
+/* Change CSS for situations where the screen is narrow */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+	#ascii-art {
+		font-size: 1.8vw;
+	}
+
+	#banner {
+		margin-left: 2%;
+		margin-right: 2%;
+		width: auto;
+		font-size: 4vw;
+	}
+}
